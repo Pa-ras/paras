@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Account {
+    private int accno;
+    private String name;
+    private double balance;
+    private String account_type;
+    
+    public void getdata() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter account number: ");
+        accno = sc.nextInt();
+        System.out.print("Enter account holder name: ");
+        name = sc.next();
+        System.out.print("Enter account balance: ");
+        balance = sc.nextDouble();
+        System.out.print("Enter account type (current/saving/fixed/RD): ");
+        account_type = sc.next();
+    }
+    
+    public void display() {
+        System.out.println("Account number: " + accno);
+        System.out.println("Account holder name: " + name);
+        System.out.println("Account balance: " + balance);
+        System.out.println("Account type: " + account_type);
+    }
+    
+    public void withdraw(double amount) {
+        if (balance < amount) {
+            System.out.println("Insufficient balance");
+        } else {
+            balance -= amount;
+            System.out.println("Rs. " + amount + " withdrawn from account");
+            System.out.println("Current balance: " + balance);
+        }
+    }
+    
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Rs. " + amount + " deposited to account");
+        System.out.println("Current balance: " + balance);
+    }
+    
+    public static void main(String[] args) {
+        Account acc = new Account();
+        acc.getdata();
+        acc.display();
+        acc.withdraw(5000);
+        acc.deposit(10000);
+    }
+}
