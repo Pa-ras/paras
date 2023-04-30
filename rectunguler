@@ -1,0 +1,44 @@
+class Rectangle
+{
+    public void area()
+    {
+        int width=3;
+        int height=4;
+        int area=width*height;
+        System.out.println(area);
+        
+    }
+}
+    class Squre extends Rectangle
+    {
+        public void area()
+        {
+            super.area();
+            int s=3;
+            int area=s*s;
+            System.out.println(area);
+            
+        }
+    }
+    
+    class Tringle extends Squre
+    {
+       
+        {
+            super.area();
+        int b=10 ;
+        int h=20;
+        int squre=b*h/2;
+        System.out.println(squre);
+        }
+    }
+    class Main
+    {
+        public static void main(String[]args)
+        {
+       Tringle r=new Tringle();
+        r.area();
+        
+    }
+    }
+    
